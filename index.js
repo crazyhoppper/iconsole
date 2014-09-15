@@ -1,30 +1,54 @@
+var util = require('util')
 require('colors')
 
+var slice = Array.prototype.slice
+
+function format(args) {
+  var msg
+  if (args.length == 1) {
+    msg = args[0]
+  } else {
+    args = slice.call(args)
+    msg = util.format.apply(null, args)
+  }
+  return msg
+}
+
 function wrap() {
-    console._oldLog = console.log;
-    console._prefix = '';
-    console.log = function(msg) {
-        console._oldLog.apply(this, [this._prefix + msg.white]);
-    }
+  console._oldLog = console.log
+  console._prefix = ''
+  console.log = function() {
+    var msg = format(arguments)
+    console._oldLog.apply(this, [this._prefix + msg.white])
+  }
 
-    console._oldWarn = console.warn;
-    console.warn = function(msg) {
-        console._oldWarn.apply(this, [this._prefix + msg.yellow]);
-    }
+  console._oldWarn = console.warn
+  console.warn = function() {
+      var msg = format(arguments)
+      console._oldWarn.apply(this, [this._prefix + msg.yellow])
+  }
 
-    console._oldError = console.error;
-    console.error = function(msg) {
-        console._oldError.apply(this, [this._prefix + msg.red]);
-    }
+  console._oldError = console.error
+  console.error = function() {
+    var msg = format(arguments)
+    console._oldError.apply(this, [this._prefix + msg.red])
+  }
 
-    console.config = function(config) {
-        this._prefix = config.prefix || '';
+  console.dir = function() {
+    var obj = arguments[0]
+    if (!obj) {
+      return
     }
-
-    console.ok = function(msg) {
-        console._oldLog.apply(this, [this._prefix + msg.green]);
+    console._oldLog('{')
+    for(var prop in obj) {
+      console._oldLog('  ' + prop.green + ' : ' + (typeof obj[prop] == 'object' ? JSON.stringify(obj[prop]) : obj[prop]))
     }
+    console._oldLog('}')
+  }
+  console.config = function(config) {
+    this._prefix = config.prefix || ''
+  }
 }
 
 
-wrap();
+wrap()
