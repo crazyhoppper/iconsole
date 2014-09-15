@@ -1,22 +1,27 @@
-##iconsole: better console for nodejs
+#iconsole - Better Console for Nodejs
 
 This item is used for print beautifully for console
 
-You can use it to change all the methor like console.log or console.error
+You can use it to change all the method behaviors and stdout styles like console.log or console.error
 
-### install
-	npm install iconsole
+### Install
 
-### usage
 ```
-	require('iconsole')
-	console.config({
-		'prefix': 'iconsole-'
-	})
-	console.log('test')
+npm install iconsole
+```
+
+### Usage
+
+```javascript
+require('iconsole')
+console.config({
+	'prefix': 'iconsole-'
+})
+console.log('test')
 ```
 
 ### Questions?
+
 If you have any questions, please feel free to ask through [New Issue](https://github.com/crazyhoppper/iconsole/issues/new)
 
 ### License
