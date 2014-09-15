@@ -18,8 +18,8 @@ function wrap() {
   console._oldLog = console.log
   console._prefix = ''
   console.log = function() {
-    var msg = format(arguments)
-    console._oldLog.apply(this, [this._prefix + msg.white])
+      var msg = format(arguments)
+      console._oldLog.apply(this, [this._prefix + msg.white])
   }
 
   console._oldWarn = console.warn
@@ -30,8 +30,8 @@ function wrap() {
 
   console._oldError = console.error
   console.error = function() {
-    var msg = format(arguments)
-    console._oldError.apply(this, [this._prefix + msg.red])
+      var msg = format(arguments)
+      console._oldError.apply(this, [this._prefix + msg.red])
   }
 
   console.dir = function() {
@@ -39,14 +39,14 @@ function wrap() {
     if (!obj) {
       return
     }
-    console._oldLog('{')
-    for(var prop in obj) {
-      console._oldLog('  ' + prop.green + ' : ' + (typeof obj[prop] == 'object' ? JSON.stringify(obj[prop]) : obj[prop]))
-    }
-    console._oldLog('}')
+    var msg = JSON.stringify(obj, null, 2);
+    msg = msg.replace(/(\n\s*)("\w+")(\s*:)/g, function(msg, msg2, msg3, msg4) {
+      return msg2 + msg3.green + msg4;
+    })
+    console._oldLog(msg)
   }
   console.config = function(config) {
-    this._prefix = config.prefix || ''
+      this._prefix = config.prefix || ''
   }
 }
 
