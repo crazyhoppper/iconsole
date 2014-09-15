@@ -23,7 +23,7 @@ console.log('test log')
 console.warn('test warn')
 console.error('test error')
 ```
-[![iconsole demo](public/pic.png)]()
+[![iconsole demo](https://raw.githubusercontent.com/crazyhoppper/iconsole/master/public/pic.png )](https://github.com/crazyhoppper/iconsole )
 
 ### Questions?
 
