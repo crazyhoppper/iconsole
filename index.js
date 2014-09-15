@@ -52,3 +52,5 @@ function wrap() {
 
 
 wrap()
+
+module.exports = console;
