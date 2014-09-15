@@ -14,10 +14,14 @@ npm install iconsole
 
 ```javascript
 require('iconsole')
+
 console.config({
-	'prefix': 'iconsole-'
+    prefix: '[iconsole] '
 })
-console.log('test')
+
+console.log('test log')
+console.warn('test warn')
+console.error('test error')
 ```
 
 ### Questions?
