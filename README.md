@@ -23,6 +23,7 @@ console.log('test log')
 console.warn('test warn')
 console.error('test error')
 ```
+[![iconsole demo](public/pic.png)]()
 
 ### Questions?
 
