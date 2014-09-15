@@ -1,0 +1,11 @@
+compatible/
+examples/
+Gruntfile.js
+*.ico
+*.html
+*.txt
+*.xml
+*.yml
+*.iml
+.*
+*~
