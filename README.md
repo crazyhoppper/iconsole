@@ -26,4 +26,4 @@ If you have any questions, please feel free to ask through [New Issue](https://g
 
 ### License
 
-Sea.js is available under the terms of the [MIT License](https://github.com/crazyhoppper/iconsole/blob/master/LICENSE.md).
+`iconsole` is available under the terms of the [MIT License](https://github.com/crazyhoppper/iconsole/blob/master/LICENSE.md).
