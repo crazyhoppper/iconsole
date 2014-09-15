@@ -1,4 +1,4 @@
-//require('iconsole').prefix('[iconsole] ')
+require('iconsole').prefix('[iconsole] ')
 
 console.log('test log %d', 222)
 console.warn('test warn %s', 'fsafdas')

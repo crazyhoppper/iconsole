@@ -1,7 +1,7 @@
 {
   "name": "iconsole",
   "description": "iconsole: better console for nodejs",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "tony <tong20080125@126.com>",
   "keywords": [
     "console",
