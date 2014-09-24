@@ -4,6 +4,8 @@ This item aim to make console printing more beautifully!
 
 You can use it to change all the method behaviors and stdout styles like console.log or console.error
 
+test
+
 ### Install
 
 ```
